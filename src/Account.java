@@ -13,7 +13,16 @@ public class Account {
 	private boolean status; 
 	private Transaction[] transactions = new Transaction[100];
 	private int transactionCount = 0;
+	private int branch;
 	
+	public int getBranch() {
+		return branch;
+	}
+
+	public void setBranch(int branch) {
+		this.branch = branch;
+	}
+
 	public void reportAccountTransaction() {
 		for (int i = 0; i < getTransactionCount(); i++) {
 			transactions[i].log.print(); 

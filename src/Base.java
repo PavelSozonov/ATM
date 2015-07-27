@@ -14,11 +14,12 @@ public class Base {
 		bank.branches[3] = new Branch("Manager Egor",   "Samara, st. Lenina,4",   "+7-919-444-4444", "8:00-20:00");
 		bank.branches[4] = new Branch("Manager Oleg",   "Ufa, st. Lenina, 5",     "+7-919-123-4567", "8:00-20:00");
 		//Create accounts (branch id, first name, second name, patronym, password, birth date, passport, type of account, sex)
-		bank.openAcc(3, "Pavel", "Sozonov",  "Sergeevich", "pass1", "26.04.1989", 100111, 'c', 'm');
-		bank.openAcc(3, "Elena", "Steklova", "Sergevna",   "pass5", "16.12.1989", 100555, 'r', 'f');
-		bank.openAcc(4, "Ivan",  "Stepanov", "Petrovich",  "pass2", "23.03.1977", 100222, 'c', 'm');
-		bank.openAcc(3, "Olga",  "Petrova",  "Egorovna",   "pass3", "12.02.1978", 100333, 's', 'f');
-		bank.openAcc(0, "Elena", "Ivanova",  "Ivanovna",   "pass4", "01.10.1990", 100444, 'b', 'f');
+		bank.openAcc(3, "Pavel", "Sozonov",  "Sergeevich", "pass1", "26.04.1989", 100111, 'c', 'm'); //id 0
+		bank.openAcc(3, "Elena", "Steklova", "Sergevna",   "pass5", "16.12.1989", 100555, 'r', 'f'); //id 1
+		bank.openAcc(4, "Ivan",  "Stepanov", "Petrovich",  "pass2", "23.03.1977", 100222, 'c', 'm'); //id 2
+		bank.openAcc(3, "Olga",  "Petrova",  "Egorovna",   "pass3", "12.02.1978", 100333, 's', 'f'); //id 3
+		bank.openAcc(0, "Elena", "Ivanova",  "Ivanovna",   "pass4", "01.10.1990", 100444, 'b', 'f'); //id 4
+		bank.openAcc(1, "Egor",  "Sergeev",  "Ivanovich",  "pass5", "05.06.1991", 100555, 'b', 'm'); //id 5
 		//bank.report(); //Show information about all customers in all branches 
 		bank.closeAcc(1);
 		bank.reportId(1);
@@ -41,6 +42,7 @@ public class Base {
 		Transaction.changeAccountType(bank, 0, 'b');
 		Transaction.reportId(bank, 0);
 		Transaction.changeDay(bank);
+		Transaction.transfer(bank, 0, 5, 1000);
 		Transaction.reportBank(bank);
 	}
 }

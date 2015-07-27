@@ -92,6 +92,7 @@ public class Bank {
 			if (check > -1) {
 				flag = false;
 				customer = branches[i].getCustomer(check);
+				customer.setBranch(i);
 			}
 		}
 		if (flag) System.out.println("Id " + id + " not found, possible account has not been created");

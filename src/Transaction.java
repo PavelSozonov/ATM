@@ -212,7 +212,9 @@ public class Transaction {
 										current2.setBalance(current2.getBalance() + sum);
 										current1.addTransaction(id1, id2, sum, "transfer", "done");
 										current2.addTransaction(id1, id2, sum, "transfer", "done");
-										bank.addTransaction(id1, id2, sum, "transfer", "done");
+										if (current1.getBranch() != current2.getBranch()) {
+											bank.addTransaction(id1, id2, sum, "transfer", "done, branch1: " + current1.getBranch() + ", branch2: " + current2.getBranch());
+										}
 									}
 								}
 							}
